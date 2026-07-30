@@ -10,9 +10,9 @@ Code contributions are closed for now.
 
 ## Translating
 
-Contour is English today. A French translation is written and waiting on a review pass, and any other language is open.
+Contour ships in English and French, and any other language is open.
 
-The catalogs are one file per language under `src/i18n/`. `en.ts` is the source of truth: around 280 strings, roughly a thousand words, with comments explaining what each one is for.
+The catalogs are one file per language under `src/i18n/`. `en.ts` is the source of truth: 307 strings, roughly a thousand words, with comments explaining what each one is for.
 
 1. Copy `src/i18n/en.ts` to `src/i18n/<code>.ts` for your language.
 2. Translate the values. Leave the keys and the `{param}` slots exactly as they are.
@@ -26,12 +26,12 @@ Please do not submit machine-translated strings without review.
 
 Contour speaks calmly. It explains, it does not sell. When you translate, carry the register, not just the words. A translation that sounds louder or more formal than the source is a mistranslation of the voice.
 
-- **Calm and unhurried.** Invitations, not commands. Even corrections stay gentle: outliers are "gently pulled back," never forced.
-- **Plain and declarative.** Short sentences that say the true thing simply: "There's nothing to sort here."
-- **It explains, it does not dictate.** Give the reason behind a result ("so the ramp leans that way instead of turning muddy"). Describe, don't prescribe.
+- **Calm and unhurried.** Invitations, not commands. Nothing is ever forced: every review card keeps "Leave them as-is" on offer, and a source that runs dry says "Other sources still see needs." rather than telling you to switch.
+- **Plain and declarative.** Short sentences that say the true thing simply: "Your colors, all at once" is the whole contract of the input field, in five words.
+- **It explains, it does not dictate.** Give the reason behind a result: "Darkened, it turns muddy." is why the hue-bend card exists at all. Describe, don't prescribe.
 - **Quietly confident.** No hype, no exclamation marks, no "instantly" or "powerful." "A good fit for product interfaces" is as strong as it gets.
 - **Honest, never absolute.** Contour frames its own work as readability, an advisory reading, never a guarantee. It never claims to check or certify contrast for you. Keep that hedge intact in every language.
-- **A little wonder.** The color facts are small notes about perception ("There is no wavelength for magenta. Your brain invents it."). Translate them for feeling, not word for word.
+- **A little wonder.** The color facts are small notes about perception ("There is no wavelength for magenta. Your brain invents it to fill the gap between red and blue."). Translate them for feeling, not word for word.
 
 ### In practice
 
@@ -39,8 +39,11 @@ Contour speaks calmly. It explains, it does not sell. When you translate, carry 
 - Keep sentences short. Do not inflate or add politeness the source does not have.
 - No em dashes. Use periods, commas, or colons.
 - No exclamation marks.
-- Keep the readability tiers as one coherent ascending set, and keep human terms human ("Feel", "Quiet", "Loud").
+- Keep the readability tiers as one coherent ascending set, and keep human terms human ("Feel", "Natural", "Grounded").
 - Never make Contour claim it guarantees or checks contrast.
+- A value shown in a picker is always capitalized, even mid-phrase: the grey lead and the value are styled apart, so the capital marks where the value begins.
+- When a preposition has to change with the word after it, put the preposition in the value, not in the frame. French needs "de succès" but "d'erreur", and no single frame string can do both.
+- Read your strings **composed**, not one per line. A catalog can look clean line by line and still ship a card whose title and description say the same thing twice, or an option that contradicts the title above it. Most of the faults found in the French pass were only visible once a whole card was rendered.
 - When two translations both work, choose the calmer, plainer one.
 
 ### Terms
